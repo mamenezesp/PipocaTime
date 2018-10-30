@@ -2,38 +2,41 @@
 /*
  *@Author: Marcela Menezes Pinto
  *@RA: 816117695
-*/ 
+*/
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Filme } from '../../model/filme';
+import { MovieProvider } from '../../providers/movie/movie';
+
 
 @IonicPage()
 @Component({
   selector: 'page-popularidade',
   templateUrl: 'popularidade.html',
+  providers: [
+    MovieProvider
+  ]
 })
 export class PopularidadePage {
 
-  public filmes: Filme[];
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    var f1 = { titulo: 'Venom', genero: 'George Orwell' };
-    var f2 = { titulo: 'Harry Potter e a Pedra Filosofal', genero: 'J. K. Rowling' };
-    var f3 = { titulo: 'O Senhor dos Anéis', genero: 'J. R. R. Tolkien' };
-    var f4 = { titulo: 'O Fantasma da Opera', genero: 'Isaac Asimov' };
-    var f5 = { titulo: 'Beleza Americana', genero: 'William Gibson' };
-    var f6 = { titulo: 'O Homem do Castelo do Alto', genero: 'Philip K. Dick' };
-    var f7 = { titulo: 'Snow Crash', genero: 'Neal Stephenson' };
-    var f8 = { titulo: '2001: Uma Odisséia no Espaço', genero: 'Arthur Clarke' };
-    var f9 = { titulo: 'Coraline', genero: 'Neal Gaiman' };
-    this.filmes = [f1, f2, f3, f4, f5, f6, f7, f8, f9];
+  public lista_filmes = new Array<any>();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private movieProvider: MovieProvider) {
 
   }
 
+  // Método acionado assim que a página é carregada, de forma assincrona  
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PopularidadePage');
-  }
+    this.movieProvider.getPopularMovies().subscribe(
+      data => {
+        const response = (data as any);
+        const objeto_retorno = JSON.parse(response._body);
+        this.lista_filmes = objeto_retorno.results; // Percorre a lista de filmes retornado e grava em um Array
+        console.log(objeto_retorno);
 
+      }, error => {
+        console.log(error);
+      }
+    )
+  }
 }

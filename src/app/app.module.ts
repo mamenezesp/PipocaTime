@@ -15,6 +15,9 @@ import { PopularidadePage } from '../pages/popularidade/popularidade';
 import { LancamentoPage } from '../pages/lancamento/lancamento';
 import { IntroPage } from '../pages/intro/intro';
 
+import { MovieProvider } from '../providers/movie/movie';
+import {HttpModule} from "@angular/http";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +32,8 @@ import { IntroPage } from '../pages/intro/intro';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +50,8 @@ import { IntroPage } from '../pages/intro/intro';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MovieProvider
   ]
 })
 export class AppModule {}

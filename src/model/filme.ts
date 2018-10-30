@@ -1,5 +1,5 @@
 //só queremos atributos, por isso interface.
 export interface Filme {
-    titulo: string;
+    title: string;
     genero: string;
 }

@@ -1,7 +1,8 @@
 
 
+
 <!-- @Author: Marcela Menezes Pinto
----- @RA: 816117695  -->
+---- @RA: 816117695 -->
 
 <ion-header>
 
@@ -13,12 +14,17 @@
 
 
 <ion-content>
-  <ion-card *ngFor="let filme of filmes">
-    <ion-card-header>
-      <h2>{{filme.titulo}}</h2>
-    </ion-card-header>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/avatar.png">
+      </ion-avatar>
+      <h2 class="feed_title">{{filme.title}}</h2>
+      <p>{{filme.release_date | date:'d/M/y'}}</p>
+    </ion-item>
+    <img [src]="'https://image.tmdb.org/t/p/w300/' + filme.backdrop_path">
     <ion-card-content>
-      <h2>{{filme.genero}}</h2>
+      <p>{{filme.overview}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
