@@ -1,0 +1,7 @@
+{
+  "name": "Pipoca",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
