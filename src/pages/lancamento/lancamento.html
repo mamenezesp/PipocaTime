@@ -1,8 +1,7 @@
 
 
-
 <!-- @Author: Marcela Menezes Pinto
----- @RA: 816117695 -->
+---- @RA: 816117695  -->
 
 <ion-header>
 
@@ -14,21 +13,12 @@
 
 
 <ion-content>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-    <ion-list>
-      <ion-item *ngFor="let item of items">
-        {{ item }}
-      </ion-item>
-    </ion-list>
-    <ion-list>
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="img/thumbnail-totoro.png">
-          </ion-thumbnail>
-          <h2>My Neighbor Totoro</h2>
-          <p>Hayao Miyazaki • 1988</p>
-          <button ion-button clear item-end>View</button>
-        </ion-item>
-      </ion-list>
-
+  <ion-card *ngFor="let filme of filmes">
+    <ion-card-header>
+      <h2>{{filme.titulo}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <h2>{{filme.genero}}</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

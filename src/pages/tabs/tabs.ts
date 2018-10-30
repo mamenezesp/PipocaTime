@@ -1,6 +1,6 @@
 
 /*
- *@Author: Marcela Menezes Pinto1
+ *@Author: Marcela Menezes Pinto
  *@RA: 816117695
 */ 
 
