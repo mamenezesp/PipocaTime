@@ -1,6 +1,3 @@
-
-
-
 <!-- @Author: Marcela Menezes Pinto
 ---- @RA: 816117695 -->
 
@@ -19,12 +16,12 @@
       <ion-avatar item-start>
         <img src="assets/imgs/avatar.png">
       </ion-avatar>
-      <h2 class="feed_title">{{filme.title}}</h2>
-      <p>{{filme.release_date | date:'d/M/y'}}</p>
+      <h2 class="feed_title">{{filmes.title}}</h2>
+      <p>{{filmes.release_date | date:'d/M/y'}}</p>
     </ion-item>
     <img [src]="'https://image.tmdb.org/t/p/w300/' + filme.backdrop_path">
     <ion-card-content>
-      <p>{{filme.overview}}</p>
+      <p>{{filmes.overview}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>

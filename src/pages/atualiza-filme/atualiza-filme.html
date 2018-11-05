@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Atualiza Filme</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="atualizaFilme()" #formulario="ngForm">
+    <ion-item>
+      <ion-label stacked>Título:</ion-label>
+      <ion-input [(ngModel)]="filme.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Descrição:</ion-label>
+      <ion-input [(ngModel)]="filme.overview" name="overview"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Ano de lançamento:</ion-label>
+      <ion-input [(ngModel)]="filme.release_date" name="release_date"></ion-input>
+    </ion-item>
+  </form>
+  <ion-fab top right edge>
+    <button mini ion-fab (click)="formulario.ngSubmit.emit()">
+      <ion-icon name="paper"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

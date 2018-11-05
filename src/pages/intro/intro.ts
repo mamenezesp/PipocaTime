@@ -3,7 +3,6 @@
  *@Author: Marcela Menezes Pinto
  *@RA: 816117695
 */
-
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';

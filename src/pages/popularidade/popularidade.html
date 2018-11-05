@@ -1,9 +1,5 @@
-
-
-
 <!-- @Author: Marcela Menezes Pinto
 ---- @RA: 816117695 -->
-
 <ion-header>
 
   <ion-navbar>
@@ -16,7 +12,7 @@
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
-  <ion-card *ngFor="let filme of lista_filmes">
+  <ion-card *ngFor="let filme of filmes">
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/imgs/avatar.png">
